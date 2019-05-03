@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "prepare": "rimraf dist && tsc",
+    "prepare": "rimraf dist && tsc && cp index.js.flow dist/src/",
     "watch": "tsc -w",
     "test": "yarn lint && jest && flow check",
     "watch-test": "jest --watchAll",
