@@ -1,6 +1,8 @@
 *~
 /node_modules
 /src
+.vscode
+.circleci
 __tests__
 *.test.*
 /coverage
