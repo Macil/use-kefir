@@ -11,17 +11,11 @@ import { useState, useEffect, useLayoutEffect, DependencyList } from 'react';
 // This subscribes to the stream asynchronously after the component has been
 // mounted and visible to the user. Use `useSyncKefir` if it's important that the
 // stream is subscribed to before the user sees the component rendered.
-export function useKefir<T>(stream: Observable<T, any>): T | void;
 export function useKefir<T>(
   stream: Observable<T, any>,
   initialValue: T,
-  inputs?: DependencyList
-): T;
-export function useKefir<T>(
-  stream: Observable<T, any>,
-  initialValue?: T,
-  inputs?: DependencyList
-): T | void {
+  inputs: DependencyList
+): T {
   const [value, setValue] = useState(initialValue);
 
   useEffect(() => {
@@ -35,17 +29,11 @@ export function useKefir<T>(
 }
 
 // Use this if it's important that the stream is subscribed to before first render.
-export function useSyncKefir<T>(stream: Observable<T, any>): T | void;
 export function useSyncKefir<T>(
   stream: Observable<T, any>,
   initialValue: T,
-  inputs?: DependencyList
-): T;
-export function useSyncKefir<T>(
-  stream: Observable<T, any>,
-  initialValue?: T,
-  inputs?: DependencyList
-): T | void {
+  inputs: DependencyList
+): T {
   const [value, setValue] = useState(initialValue);
 
   useLayoutEffect(() => {

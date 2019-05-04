@@ -4,12 +4,12 @@ import type {Observable} from 'kefir';
 
 declare export function useKefir<T>(
   stream: Observable<T>,
-  initialValue: T,
-  inputs: ?$ReadOnlyArray<mixed>
+  initialValue: (() => T) | T,
+  inputs: $ReadOnlyArray<mixed>
 ): T;
 
 declare export function useSyncKefir<T>(
   stream: Observable<T>,
-  initialValue: T,
-  inputs: ?$ReadOnlyArray<mixed>
+  initialValue: (() => T) | T,
+  inputs: $ReadOnlyArray<mixed>
 ): T;
