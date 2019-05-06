@@ -16,7 +16,11 @@ for (const useTestKefir of [useKefir, useSyncKefir]) {
   describe(useTestKefir.name, () => {
     test('constant', () => {
       function Foo(props: {}) {
-        const value = useTestKefir(Kefir.constant('abc'), null, []);
+        const value = useTestKefir<null | string>(
+          Kefir.constant('abc'),
+          null,
+          []
+        );
         return <div>{value || '<no value>'}</div>;
       }
 
@@ -42,7 +46,7 @@ for (const useTestKefir of [useKefir, useSyncKefir]) {
       });
 
       function Foo(props: {}) {
-        const value = useTestKefir(stream, 'initial', []);
+        const value = useTestKefir(stream, () => 'initial', []);
         return <div>{value}</div>;
       }
 
