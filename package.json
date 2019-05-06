@@ -7,6 +7,7 @@
   "author": "Chris Cowan <agentme49@gmail.com>",
   "license": "MIT",
   "private": false,
+  "sideEffects": false,
   "scripts": {
     "prepare": "rimraf dist && tsc && cp index.js.flow dist/src/",
     "watch": "tsc -w",
