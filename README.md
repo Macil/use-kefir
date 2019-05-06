@@ -2,7 +2,7 @@
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/Macil/use-kefir/blob/master/LICENSE.txt) [![npm version](https://badge.fury.io/js/use-kefir.svg)](https://badge.fury.io/js/use-kefir) [![Circle CI](https://circleci.com/gh/Macil/use-kefir.svg?style=shield)](https://circleci.com/gh/Macil/use-kefir) [![Greenkeeper badge](https://badges.greenkeeper.io/Macil/use-kefir.svg)](https://greenkeeper.io/)
 
-This is a React hook for allowing components to subscribe to a Kefir
+This is a React hook for allowing components to subscribe to a [Kefir](https://kefirjs.github.io/kefir/)
 observable and read the latest value from it.
 
 ## Example
