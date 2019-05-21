@@ -60,7 +60,10 @@
   },
   "greenkeeper": {
     "ignore": [
-      "@types/*",
+      "@types/jest",
+      "@types/kefir",
+      "@types/react",
+      "@types/react-dom",
       "flow-bin"
     ]
   }
