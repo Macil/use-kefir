@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "React hook for allowing components to receive values from a Kefir Observable",
   "main": "dist/src/index.js",
-  "repository": "git@github.com:Macil/use-kefir.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Macil/use-kefir.git"
+  },
   "author": "Chris Cowan <agentme49@gmail.com>",
   "license": "MIT",
   "private": false,
