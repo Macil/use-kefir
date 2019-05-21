@@ -1,5 +1,3 @@
-/* @flow */
-
 import { Observable } from 'kefir';
 import { useState, useEffect, useLayoutEffect, DependencyList } from 'react';
 
