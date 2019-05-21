@@ -1,6 +1,6 @@
 {
   "name": "use-kefir",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React hook for allowing components to receive values from a Kefir Observable",
   "main": "dist/src/index.js",
   "repository": {
