@@ -51,7 +51,7 @@
     "kefir-bus": "^2.3.1",
     "prettier": "^1.17.0",
     "prettier-check": "^2.0.0",
-    "pretty-quick": "^1.10.0",
+    "pretty-quick": "^2.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "rimraf": "^3.0.0",
