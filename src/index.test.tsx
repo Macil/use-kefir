@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import Kefir, { Observable } from 'kefir';
-import kefirBus from 'kefir-bus';
 
 import { useKefir, useSyncKefir } from '.';
 
@@ -67,7 +66,9 @@ for (const useTestKefir of [useKefir, useSyncKefir]) {
       });
       expect(div.textContent).toBe('123');
       expect(isActive).toBe(true);
-      ReactDOM.unmountComponentAtNode(div);
+      act(() => {
+        ReactDOM.unmountComponentAtNode(div);
+      });
       expect(isActive).toBe(false);
       expect(activationCount).toBe(1);
     });

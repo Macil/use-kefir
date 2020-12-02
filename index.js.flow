@@ -1,6 +1,6 @@
 /* @flow */
 
-import type {Observable} from 'kefir';
+import type { Observable } from 'kefir';
 
 declare export function useKefir<T>(
   stream: Observable<T>,
