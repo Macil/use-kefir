@@ -26,7 +26,9 @@ for (const useTestKefir of [useKefir, useSyncKefir]) {
         ReactDOM.render(<Foo />, div);
       });
       expect(div.textContent).toBe('abc');
-      ReactDOM.unmountComponentAtNode(div);
+      act(() => {
+        ReactDOM.unmountComponentAtNode(div);
+      });
     });
 
     test('initial and multiple values', () => {
@@ -71,6 +73,30 @@ for (const useTestKefir of [useKefir, useSyncKefir]) {
       });
       expect(isActive).toBe(false);
       expect(activationCount).toBe(1);
+    });
+
+    test('function', () => {
+      const myFn = () => {
+        throw new Error('should not be called');
+      };
+
+      function Foo(props: {}) {
+        const value = useTestKefir<null | Function>(
+          Kefir.constant(myFn),
+          null,
+          []
+        );
+        return <div>{String(value === myFn)}</div>;
+      }
+
+      const div = document.createElement('div');
+      act(() => {
+        ReactDOM.render(<Foo />, div);
+      });
+      expect(div.textContent).toBe('true');
+      act(() => {
+        ReactDOM.unmountComponentAtNode(div);
+      });
     });
   });
 }

@@ -17,9 +17,16 @@ export function useKefir<T>(
   const [value, setValue] = useState(initialValue);
 
   useEffect(() => {
-    stream.onValue(setValue);
+    function handler(value: T) {
+      if (typeof value === 'function') {
+        setValue(() => value);
+      } else {
+        setValue(value);
+      }
+    }
+    stream.onValue(handler);
     return () => {
-      stream.offValue(setValue);
+      stream.offValue(handler);
     };
   }, inputs);
 
@@ -35,9 +42,16 @@ export function useSyncKefir<T>(
   const [value, setValue] = useState(initialValue);
 
   useLayoutEffect(() => {
-    stream.onValue(setValue);
+    function handler(value: T) {
+      if (typeof value === 'function') {
+        setValue(() => value);
+      } else {
+        setValue(value);
+      }
+    }
+    stream.onValue(handler);
     return () => {
-      stream.offValue(setValue);
+      stream.offValue(handler);
     };
   }, inputs);
 
